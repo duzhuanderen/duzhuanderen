@@ -1,0 +1,47 @@
+/* pages/uploading/uploading.wxss */
+.videoBox{
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+.videoBox text{
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.videoBox image{
+  float: left;
+  width: 250rpx;
+  height: 250rpx;
+}
+/* 预览 */
+
+.preview-warp{
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*居中对齐*/
+  position: relative;
+  background-color: #fff;
+ height: 300rpx;
+}
+.prew_video{
+    display: flex;
+    align-items: center; /*垂直居中*/
+    justify-content: center; /*居中对齐*/
+    position: relative;
+    background-color: #fff;
+    height: 300rpx;
+}
+.prew_video[hidden]{
+    display: none;
+}
+.prew_video .play{
+    width: 48rpx;
+    height: 48rpx;
+}
+/*上传文本*/
+.textArea{
+  display: flex;
+  flex-direction: column;
+  height: 500rpx;
+}
+

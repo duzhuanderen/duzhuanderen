@@ -1,0 +1,104 @@
+<!--video.js-->
+<view style="width:100%;height:660px">
+<!--播放器-->
+<video  id='myVideo' src='{{article.videourl}}'controls enable-danmu danmu-btn="true" danmu-list="{{danmuList}}" show-fullscreen-btn="true"></video>
+<!--弹幕-->
+<view class='danmuArea'>
+  <view class="nav">
+    <view bindtap="navSwitch" data-index="0" class="{{navState==0 ? 'nav-switch-style':''}}">简介</view>
+    <view bindtap="navSwitch" data-index="1" class="{{navState==1 ? 'nav-switch-style':''}}">评论</view>
+  </view>
+  <input type='text' placeholder='请输入弹幕' bindinput='getDanmu'></input>
+  <button bindtap='sendDanmu'>弹幕</button>
+</view>
+<swiper bindchange="bindchange" current="{{navState}}">
+  <block>
+    <swiper-item>
+      <scroll-view class="scroll-view_H" scroll-y="true" >
+      <view class="style-roll">
+        <!--简介-->
+        <view class="avatar">
+          <image src="{{article.avatarUrl}}"></image>
+          <text>{{article.nickName}}</text>
+        </view>
+        <view class="introduction">
+          <view class="int">
+            <view class="title">{{article.title}}</view>
+            <view class="zhedie" bindtap="zhedie">{{isF ? '﹀' : '︿'}}</view>
+          </view>
+          <text class="conts {{isF?'hide':''}}">{{article.introduction}}</text>
+        </view>
+        <!--关键字-->
+        <view class="keyword" style="font-size:8pt;fint-color:gary">
+          <view  class="wor" style="margin:3px 5px;" wx:for="{{article.keyword}}">
+            <view>{{item}}</view>
+          </view>
+        </view>
+        <!--分享-->
+        <view class="collect">
+          <view class="box" wx:if='{{dianzan}}' data-id="{{videos._id}}"  bindtap="zan">
+            <image src='{{yizanurl}}'></image>
+            <text>{{zan}}</text>
+          </view>
+          <view class="box" wx:elif="{{!dianzan}}" data-id="{{videos._id}}"  bindtap="zan">
+            <image src='{{dianzanurl}}'></image>
+            <text>{{zan}}</text>
+          </view>
+          <view class="box" wx:if='{{isAdd}}'plain bindtap="cancelFavorites">
+            <image src="../../images/已收藏.png"></image>
+            <text>已收藏</text>
+          </view>
+          <view class="box" wx:else plain bindtap="addFavorites">
+            <image src="../../images/收藏.png"></image>
+            <text>收藏</text>
+          </view>
+          <view class="box" >
+            <image src="../../images/播放.png"></image>
+            <text>{{shuliang}}</text>
+          </view>
+        </view>
+        <!--视频列表-->
+        <view class="listTitle">
+          更多推荐
+        </view>
+        <view class="videoList" wx:if="{{isCollect}}">
+          <view class='videoBar' wx:for="{{collect}}" wx:key="_id" >
+            <image src="{{item.imgurl}}" bindtap="goToDetail" data-id="{{item._id}}"></image>
+            <text bindtap="goToDetail" data-id="{{videos._id}}">{{item.title}}</text>
+          </view>
+        </view>
+        <view class="videoList" wx:else>
+          <view class='videoBar' >
+            <text>还未有与之相关的视频！！</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    </swiper-item>
+    <!--评论-->
+    <swiper-item>
+      <scroll-view class="scroll-view_H" scroll-y="true" style="height:95%">
+      <view class="style-roll">
+        <block  wx:for="{{pinglun}}" wx:key="index">
+         <view class="pinglunItem">
+          <view  class="name">
+            <image src="{{item.avatarUrl}}" info="{{item}}" bindtap="alertInfo"></image>
+            <text>{{item.name}}:</text>
+          </view> 
+          <view class="text">
+            <text>{{item.content}}</text>
+          </view> 
+          </view>  
+        </block>
+        <!--发表评论-->
+        <view class="send">
+          <input value="{{content}}" bindinput="getComment" class="input" placeholder="请输入评论"></input> 
+          <button bindtap="sendComment" type="primary">发表评论</button>
+        </view>
+      </view>
+    </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+

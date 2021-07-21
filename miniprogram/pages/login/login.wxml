@@ -1,0 +1,48 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class="main">
+      <!-- 图像 -->
+      <view class="avar">
+          <image src="../../images/avar.png"></image>
+      </view>
+      <!-- //输入 -->
+      <view class="login">
+        <van-tabs bind:click="onClick">
+          <!-- 账户登录 -->
+          <van-tab class="zhHu" title="账号登陆">
+            <view class="context">
+              <form catchsubmit="formSubmit" >
+                <view class="formItem" style="margin: 30rpx 0" >
+                  <image src="../../images/icon/account.png"/>
+                  <input name="account" placeholder="账户" />
+                </view>
+                <view class="formItem" style="margin: 30rpx 0" >
+                  <image src="../../images/icon/password.png"/>
+                  <input type="password" name="password" placeholder="密码" />
+                </view>
+                <view class="btn-area">
+                  <button style="margin: 30rpx 0" type="primary" formType="submit">登录</button>
+                </view>
+              </form>
+            </view>
+            <view class="forget text" bindtap="gotoForget">
+              忘记密码？
+            </view>
+            <view class="register text" bindtap="gotoRegister">
+              新来的吗？注册
+            </view>
+          </van-tab>
+          <!-- 微信登录 -->
+          <van-tab class="weiXin" title="微信登陆">
+            <view id="myLogin">
+              <block wx:if='{{isLogin}}'>
+                <image id='myIcon' src='{{avatar}}'></image>
+                <text id='nickName'>{{nickName}}</text>
+              </block>
+              <button wx:else type="primary" open-type="getUserInfo" bindgetuserinfo='getMyInfo'>微信登录</button>
+            </view>
+          </van-tab>
+        </van-tabs>
+      </view>
+    </view>
+</view>

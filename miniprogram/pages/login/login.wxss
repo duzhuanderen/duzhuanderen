@@ -1,0 +1,72 @@
+/* pages/login/login.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  background-image: url("https://img0.baidu.com/it/u=3023965900,2845086345&fm=26&fmt=auto&gp=0.jpg");
+  background-size: 100% 100%;
+}
+.main{
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height:50%;
+  background-color:white;
+  border-radius:20rpx
+}
+
+.avar{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avar image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.formItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.login image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.login input{
+  width: 70%;
+  margin-left: 20rpx;
+}
+.btn-area{
+  width: 80%;
+  margin-left:10%;
+}
+.zhHu .text{
+  width: 80%;
+  height: 40rpx;
+  margin: 15rpx 10%;
+  text-align: center;
+  color: darkslategray;
+  opacity: 0.8;
+}
+#myLogin{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 40%;
+  margin:15% 20% 30% 20%;
+}
+.weiXin image{
+  width: 80rpx;
+  height: 80rpx;
+  align-self: center;
+}
+.weiXin text{
+  align-self: center;
+}

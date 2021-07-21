@@ -1,15 +1,26 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/alllist/alllist",
+    "pages/my/my",
+    "pages/video/video",
+    "pages/uploading/uploading",
+    "pages/partition/partition",
     "pages/detail/detail",
-    "pages/my/my"
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forGet/forGet",
+    "pages/favMore/favMore",
+    "pages/feedBack/feedBack"
+   
   ],
-  "window": {
+  "window":{            
     "navigationBarBackgroundColor": "#328EEB",
-    "navigationBarTitleText": "我的电影网"
+    "navigationBarTitleText": "我的小程序",
+    "enablePullDownRefresh":true
   },
   "tabBar": {
-    "color": "#000",
+    "color": "#0000",
     "selectedColor": "#328EEB",
     "list": [
       {
@@ -19,11 +30,18 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/partition/partition",
+        "iconPath": "images/fenqu.png",
+        "selectedIconPath": "images/分区_blue.png",
+        "text": "分区"
+      },
+      {
         "pagePath": "pages/my/my",
-        "oconPath": "images/my.png",
+        "iconPath": "images/my.png",
         "selectedIconPath": "images/my_blue.png",
         "text": "我的"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap46.json"
 }

@@ -1,3 +1,6 @@
 {
+  "usingComponents":{
+    "van-search":"/vant-weapp/dist/search/index"
+  },
   "onReachBottomDistance":100
 }

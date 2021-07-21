@@ -1,15 +1,35 @@
+<!--搜索-->
+<van-search placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel"/>
+<!--搜索列表-->
+<view class="list" style="margin:25px 20px;background-color:gary;border-radius:20%" wx:for="{{searchlist}}" wx:key="{{item._id}}">
+  <view class="list_1" style="display:flex;flex-direction:row;" data-id="{{item._id}}" bindtap="goToDetail">
+    <image src="{{item.imgurl}}" style="width:150rpx;height:100rpx;margin-left:10rpx;"></image>
+    <view>{{item.title}}</view>
+  </view>
+  <view class="line"></view>
+</view>
 <!--幻灯片滚动-->
 <swiper indicator-dots autoplay interval="5000" duration="500">
-  <block wx:for="{{[newsList[0],newsList[1],newsList[2]]}}" wx:key='swiper{{index}}'>
-    <swiper-item>
-      <image src="{{item.poster}}" class="slide-image"/> 
+  <block wx:for="{{videosList}}" wx:if='{{index<3}}' wx:key='swiper{{index}}'>
+    <swiper-item data-id="{{item._id}}" bindtap="goToDetail">
+      <image src="{{item.imgurl}}" /> 
     </swiper-item>
   </block>
 </swiper>
-<!--列表-->
-<view id='news-list'>
-  <view class='list-item' wx:for="{{newsList}}" wx:for-item="news" wx:key="news{{index}}">
-    <image src='{{news.poster}}'></image>
-    <text data-id="{{news.id}}" bindtap="goToDetail">{{news.title}}--{{news.add_date}}</text>
+<!--精选推荐-->
+<view id='videos-list'>
+  <view class="hotTitle">
+    <text class="selected">精选推荐</text>
+    <text class="more" bindtap="goToAllList">更多>></text>
+  </view>
+  <view class="hot">
+    <view class='list-item' wx:for="{{videosList}}"  wx:for-item="videos" wx:key="videos{{index}}" >
+      <view class="img">
+        <image src='{{videos.imgurl}}' bindtap="goToDetail" data-id="{{videos._id}}"></image>
+      </view>
+      <view class="text">
+        <text data-id="{{videos._id}}" bindtap="goToDetail" data-id="{{videos._id}}">{{videos.title}}--{{videos.date}}</text>
+      </view>
+    </view>
   </view>
 </view>

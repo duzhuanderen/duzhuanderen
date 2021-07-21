@@ -1,0 +1,29 @@
+#all-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: gray;
+}
+.list-item{
+  display: flex;
+  flex-direction:column;
+  overflow: hidden;
+  width: 48%;
+  font-size: 30rpx;
+  margin: 15rpx 1%;
+  border:0px;
+  border-radius: 10rpx;
+  box-shadow: 0 0 15rpx 5rpx #9fafc0;
+}
+.img{
+  width: 95%;
+}
+.img image{
+  width: 100%;
+}
+.text{
+  width: 100%;
+  height: 45%;
+  overflow: hidden;
+  padding: 0 10rpx;
+}

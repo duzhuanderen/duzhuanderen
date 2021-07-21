@@ -1,0 +1,39 @@
+<!--pages/uploading/uploading.wxml-->
+<form >
+  <!--输入框-->
+ <view >
+    <view>标题</view>
+    <input name="title" placeholder="请输入标题（最多30个字）" bindinput="title_input" maxlength="30"></input>
+  </view>
+   <view>
+    <view >关键字</view>
+    <input name="keyword" placeholder="请输入关键字（以英文逗号隔开）" bindinput="keyword_input" maxlength="20" ></input>
+  </view>
+   <view>
+    <view >简介</view>
+    <textarea name="introduction" placeholder="请输入视频简介(200字)" maxlength="200" bindinput="introduction_input"></textarea>
+  </view>
+  <!-- 图片视频预览 -->
+  <scroll-view class="preview-warp" scroll-y="true">
+    <view>选择上传视频封面图片</view>
+      <block wx:for='{{imgs}}' >
+        <image src='{{item}}' style="width:150rpx;height:100rpx" ></image>
+        <button size="mini" type="warn" plain="true" bindtap="deleteImg" data-id="{{index}}" data-src="{{item}}">删除图片</button>
+      </block>
+    <view class="anniu">
+      <button size="mini" type="primary" bindtap="chooseImg">添加图片</button>
+    </view>
+  </scroll-view>
+  <scroll-view class="prew_video" scroll-y="true">
+    <view>选择上传视频</view>
+      <block wx:for="{{videos}}">
+        <video  src='{{item}}' style="width:200rpx;height:200rpx" ></video>
+        <button size="mini" type="warn" plain="true" bindtap="deleteVideo" data-id="{{index}}" data-src="{{item}}">删除视频</button>
+      </block>
+    <view class="anniu">
+      <button size="mini" type="primary" bindtap="chooseVideo">添加视频</button>
+    </view>
+  </scroll-view>
+  <!--上传按钮-->
+  <button form-type="submit" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="submit" >上传</button>
+</form>

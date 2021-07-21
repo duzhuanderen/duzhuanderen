@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="main">
+      <!-- 图像 -->
+      <view class="avar">
+          <image src="../../images/avar.png"></image>
+      </view>
+      <!-- //输入 -->
+      <view class="login">
+          <!-- 账户登录 -->
+            <view class="context">
+              <form catchsubmit="formSubmit" >
+                <view class="inp">
+                  <label>请输入您所遇到的问题</label>  
+                  <textarea name="textcont" placeholder="请输入最多140字"></textarea>
+                </view>
+                  <view class="btn-area">
+                  <button style="margin: 30rpx 0" type="primary" formType="submit">提交</button>
+                </view>
+              </form>
+            </view>
+      </view>
+    </view>
+</view>

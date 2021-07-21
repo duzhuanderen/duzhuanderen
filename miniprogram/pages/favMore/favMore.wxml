@@ -1,0 +1,10 @@
+<view id='all-list'>
+  <view class='list-item' wx:for="{{myList}}"  wx:for-item="videos" wx:key="videos{{index}}" >
+      <view class="img">
+        <image src='{{videos.imgurl}}'bindtap="goToDetail" data-id="{{videos._id}}"></image>
+      </view>
+      <view class="text">
+        <text data-id="{{videos._id}}"bindtap="goToDetail"data-id="{{videos._id}}">{{videos.title}}--{{videos.date}}</text>
+      </view>
+  </view>
+</view>

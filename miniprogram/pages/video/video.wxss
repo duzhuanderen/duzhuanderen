@@ -1,0 +1,253 @@
+/*视频组件*/
+video{
+  width: 100%;
+  height: 35%;
+  position: sticky;
+  top:0px;
+  z-index: 2;
+}
+/*nav*/
+.danmuArea{
+  height: 5%;
+  background-color: white;
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.danmuArea input{
+  height: 100%;
+}
+swiper{
+  height: 60%;
+  overflow: scroll;
+  background-color: whitesmoke;
+}
+swiper .scroll-view_H{
+  height: 100%;
+}
+.nav-switch-style{
+  color:red;
+}
+.style-default{
+  background-color: rgb(247, 229, 130);
+  padding: 100rpx 0;
+  text-align: center;
+}
+.style-roll{
+  overflow: scroll;
+  padding: 10rpx 0;
+}
+/*弹幕*/
+.danmuArea{
+  position: sticky;
+  top: 34%;
+  display: flex;
+  flex-direction: row;
+  height: 70rpx;
+  padding-bottom: 10rpx;
+  z-index: 8;
+}
+/*简介*/
+.danmuArea .introduction{
+  width: 25%;
+}
+swiper .avatar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  padding-left:20rpx ;
+}
+swiper .avatar image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+swiper .avatar text{
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+swiper .introduction{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+    border-bottom:1px solid gray;
+}
+.int{
+  display: flex;
+  flex-direction: row
+}
+.int .title{
+  padding: 0 10rpx;
+  width: 90%;
+  font-size: 30rpx;
+}
+.zhedie{
+  width: 10%;
+}
+swiper .introduction text{
+  font-size: 25rpx;
+  color: gray;
+  padding: 0 15rpx;
+}
+/*文本描述折叠  */
+.conts {
+  /*关键属性（必须有的）*/
+  display: -webkit-box;
+}
+
+.hide {
+  /*规定子元素的排列方向 */
+  -webkit-box-orient: vertical;
+  /*限制文本显示的行数  */
+  -webkit-line-clamp: 2;
+  /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*关键字*/
+swiper .keyword{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+swiper .keyword .wor{
+  background-color: darksalmon;
+  border-radius: 20%;
+  text-align: center;
+}
+
+/*评论*/
+.comment{
+  width: 25%;
+}
+swiper .image{
+  width: 120rpx;
+  height: 120rpx;
+}
+swiper .pinglunItem{
+  display: flex;
+  flex-direction: column ;
+  width: 100%;
+  margin: 30rpx;
+  border-bottom: 1px solid #987938;
+}
+swiper .pinglunItem .name{
+  display:flex;
+  flex-direction:row;
+  height: 50rpx;
+  color: gray;
+  font-size: 20rpx;
+  line-height: 50rpx;
+}
+swiper .pinglunItem .text{
+  width: 85%;
+  min-height: 50rpx;
+  margin-left:10% ;
+  line-height: 50rpx;
+  overflow-wrap: break-word;
+}
+swiper .pinglunItem image{
+  width:50rpx;
+  height:50rpx;
+  margin-left:10rpx;
+  margin-right:10rpx;
+  border-radius:50%;
+}
+.pinglun text{
+  font-size:20px;
+}
+.send{
+  position: fixed;
+  bottom:0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  padding-top:5rpx ;
+  background-color: white;
+}
+.send .input{
+  width: 60%;
+  height: 100%;
+}
+.send button{
+  width: 40%;
+  height: 100%;
+}
+/*文本*/
+input{
+  width: 30%;
+}
+/*按钮*/
+button{
+  width: 20%;
+  font-size: 10pt;
+  color: white;
+  background-color:#987938; 
+
+}
+/*点赞*/
+.collect{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.box image{
+  width: 60rpx;
+  height: 60rpx;
+  padding-top: 7px;
+}
+.box text{
+  font-size: 30rpx;
+  color: gray;
+}
+
+/*视频列表*/
+.listTitle{
+  font-size: small;
+  color: gray;
+}
+.videoList{
+  width: 100%;
+}
+.videoBar{
+  width: 100%;
+ height: 80px;
+  display: flex;
+  flex-direction: row;
+  border: 1 px solid #998a6a;
+  margin: 10rpx ;
+  background-color: #6012;
+}
+.videoList image{
+  width:40%;
+  height: 60px;
+  margin: 10px;
+}
+.videoList text{
+  width: 60%;
+  font-size: 40rpx;
+  color: #987938;
+  margin: 20rpx;
+  display: -webkit-box;
+ /*规定子元素的排列方向 */
+ -webkit-box-orient: vertical;
+ /*限制文本显示的行数  */
+ -webkit-line-clamp: 2;
+ /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+ overflow: hidden;
+ text-overflow: ellipsis;
+}

@@ -1,55 +1,83 @@
 // pages/detail/detail.js
-var common=require('../../utils/common.js')
+var common = require('../../utils/common.js')
+const db = wx.cloud.database()
+const videos = db.collection('videos')
+var row = 20
+var page = 0 
 Page({
-  addFavorites:function(){
-    let article=this.data.article;
-    wx.setStorageSync(article._id, article);
-    this.setData({isAdd:true});
-  },
-  cancelFavorites:function(){
-    let article=this.data.article;
-    wx.removeStorageSync(article._id);
-    this.setData({isAdd:false});
-  },
+
   /**
    * 页面的初始数据
    */
+  data: {
+
+  },
+  //详情页面跳转
+  goToDetail: function (e) {
+    common.goToDetail(e.currentTarget.dataset.id)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //显示loading提示框
-    wx.showLoading({
-      title: '数据加载中'
+    let name=options.keyword
+    videos.where({
+      keyword:name
+    }).get({
+      success: res => {
+        this.setData({ 
+          videosList: res.data
+         })
+      }
     })
-    //获取编号
-    let id=options.id
-    //根据ID查找是否在收藏夹中
-    let article=wx.getStorageSync(id)
-    //在收藏夹中
-    if(article!=''){
-      //更新页面信息和状态
-      this.setData({
-        article:article,
-        isAdd:true
-      })
-      //隐藏提示框
-      wx.hideLoading()
-    }
-    //不在收藏夹
-    else{
-      //根据ID在云数据集中查找内容
-      news.doc(id).get({
-        success:res=>{
-          //更新信息状态
-          this.setData({
-            article:res.data,
-            isAdd:false
-          })
-          //隐藏loading提示框
-          wx.hideLoading()
-        }
-      })
-    }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

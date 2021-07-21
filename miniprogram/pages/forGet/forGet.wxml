@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="main">
+      <!-- 图像 -->
+      <view class="avar">
+          <image src="../../images/avar.png"></image>
+      </view>
+      <!-- //输入 -->
+      <view class="login">
+        <!-- 账户登录 -->
+        <view class="context">
+          <form catchsubmit="formSubmit" >
+            <view class="formItem" style="margin: 30rpx 0" >
+              <image src="../../images/icon/account.png"/>
+              <input name="account" placeholder="账户" />
+            </view>
+            <view class="formItem" style="margin: 30rpx 0" >
+              <image src="../../images/icon/telnumber.png"/>
+              <input type="tel" name="telnumber" placeholder="请输入手机号" />
+            </view>
+            <view class="btn-area">
+              <button style="margin: 30rpx 0" type="primary" formType="submit">找回</button>
+            </view>
+          </form>
+          <view class="get" wx:if="{{isFind}}">
+            <text>找回的密码:</text>
+            <text style="color:gray">{{getPassword}}</text>
+
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

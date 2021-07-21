@@ -1,0 +1,114 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/alllist/alllist",
+          "pathName": "pages/alllist/alllist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/video/video",
+          "pathName": "pages/video/video",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/uploading/uploading",
+          "pathName": "pages/uploading/uploading",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/uploading/uploading",
+          "pathName": "pages/uploading/uploading",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partition/partition",
+          "pathName": "pages/partition/partition",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "chatroom",
+          "pathName": "components/chatroom/chatroom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "detail",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forget",
+          "pathName": "pages/forGet/forGet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "moreFav",
+          "pathName": "pages/favMore/favMore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "feedback",
+          "pathName": "pages/feedBack/feedBack",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
